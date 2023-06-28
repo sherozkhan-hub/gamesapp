@@ -1,7 +1,5 @@
-import React from "react";
-
 const Aside = () => {
-  return <div>Aside</div>;
+  return <div>Aside bhbj</div>;
 };
 
 export default Aside;

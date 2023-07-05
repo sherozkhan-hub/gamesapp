@@ -10,6 +10,7 @@ const App = () => {
   // const [gameQuery, setGameQuery] = useState({});
   const [selectedGenre, setSelectedGenre] = useState([]);
   const [selectedPlatform, setSelectedPlatform] = useState([]);
+  const [selectedSort, setSelectedSort] = useState("");
 
   return (
     <div>
@@ -41,11 +42,15 @@ const App = () => {
               selectedPlatform={selectedPlatform}
               form={setSelectedPlatform}
             />
-            <SortSelector />
+            <SortSelector
+              selectedSort={selectedSort}
+              onSelectSortOrder={setSelectedSort}
+            />
           </HStack>
           <GameGrid
             selectedPlatform={selectedPlatform}
             selectedGenre={selectedGenre}
+            selectedSort={selectedSort}
           />
         </GridItem>
       </Grid>

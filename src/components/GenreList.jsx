@@ -9,7 +9,7 @@ import {
 import useGenre from "../hooks/useGenre";
 import getCroppedImageUrl from "../services/image-url";
 
-const GenreList = ({ setSelectedGenre }) => {
+const GenreList = ({ setSelectedGenre, selectedGenre }) => {
   const { data, isLoading, error } = useGenre();
 
   if (error) return null;
@@ -26,6 +26,7 @@ const GenreList = ({ setSelectedGenre }) => {
               borderRadius={8}
             />
             <Button
+              fontWeight={selectedGenre.id === g.id ? "bold" : "normal"}
               onClick={() => setSelectedGenre(g)}
               fontSize={"lg"}
               variant={"link"}

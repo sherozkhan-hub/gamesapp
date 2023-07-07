@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
@@ -5,6 +6,7 @@ import GameCardSkeleton from "./GameCardSkeleton";
 
 // eslint-disable-next-line react/prop-types
 const GameGrid = ({
+  // eslint-disable-next-line react/prop-types
   selectedGenre,
   selectedPlatform,
   selectedSort,
@@ -23,7 +25,7 @@ const GameGrid = ({
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         padding={"10px"}
-        spacing={3}
+        spacing={6}
       >
         {isLoading && skeletons.map((item) => <GameCardSkeleton key={item} />)}
         {data.map((game) => (

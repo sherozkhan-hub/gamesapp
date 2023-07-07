@@ -4,11 +4,17 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 // eslint-disable-next-line react/prop-types
-const GameGrid = ({ selectedGenre, selectedPlatform, selectedSort }) => {
+const GameGrid = ({
+  selectedGenre,
+  selectedPlatform,
+  selectedSort,
+  searchText,
+}) => {
   const { data, error, isLoading } = useGames(
     selectedGenre,
     selectedPlatform,
-    selectedSort
+    selectedSort,
+    searchText
   );
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (

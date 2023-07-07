@@ -6,11 +6,14 @@ import { useState } from "react";
 import PlatformSelector from "./components/PlatfromSelector";
 import SortSelector from "./components/SortSelector";
 
+import "./index.css";
+
 const App = () => {
   // const [gameQuery, setGameQuery] = useState({});
   const [selectedGenre, setSelectedGenre] = useState([]);
   const [selectedPlatform, setSelectedPlatform] = useState([]);
   const [selectedSort, setSelectedSort] = useState("");
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div>
@@ -26,7 +29,7 @@ const App = () => {
         }}
       >
         <GridItem area={"nav"}>
-          <NavBar />
+          <NavBar onSearch={setSearchText} />
         </GridItem>
         <Show above="lg">
           <GridItem area={"aside"} paddingX={"10px"}>
@@ -51,6 +54,7 @@ const App = () => {
             selectedPlatform={selectedPlatform}
             selectedGenre={selectedGenre}
             selectedSort={selectedSort}
+            searchText={searchText}
           />
         </GridItem>
       </Grid>
